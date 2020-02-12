@@ -1,0 +1,30 @@
+{
+    "name": "@codeinplace/js-utils",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "description": "Javascript helpers used by CodeInPlace.",
+    "repository": "https://github.com/codeinplace/js-utils.git",
+    "license": "UNLICENSED",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+        "prepublishOnly": "yarn test && yarn build",
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@sucrase/jest-plugin": "^2.0.0",
+        "@types/jest": "^25.1.2",
+        "jest": "^25.1.0",
+        "rimraf": "^3.0.2",
+        "sucrase": "^3.12.1"
+    },
+    "jest": {
+        "rootDir": "./src",
+        "transform": {
+            ".(js|ts)": "@sucrase/jest-plugin"
+        }
+    }
+}

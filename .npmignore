@@ -1,0 +1,6 @@
+/node_modules
+/src
+/dist/*.spec.js
+.gitignore
+.npmignore
+yarn.lock
